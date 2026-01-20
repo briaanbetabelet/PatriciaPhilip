@@ -48,7 +48,7 @@ body {
     will-change: transform;
 }
 
-/* Disposition galerie en grille 3x2 */
+/* Disposition galerie en grille responsive */
 #gallery-grid {
     grid-template-columns: repeat(3, 1fr);
 }
@@ -59,9 +59,15 @@ body {
     }
 }
 
+/* Zone tactile plus grande pour mobile */
 @media (max-width: 640px) {
-    #gallery-grid {
-        grid-template-columns: 1fr;
+    #gallery-grid .relative {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    #gallery-grid img {
+        touch-action: manipulation;
     }
 }
 
@@ -92,6 +98,175 @@ textarea:focus {
     
     .text-6xl {
         font-size: 2.5rem;
+    }
+}
+
+/* Améliorations mobiles */
+@media (max-width: 640px) {
+    /* Navigation mobile améliorée */
+    #navigation {
+        padding: 0.5rem 0;
+    }
+    
+    #navigation h3 {
+        font-size: 1rem;
+    }
+    
+    /* Section bienvenue mobile */
+    #bienvenue h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+        white-space: normal !important;
+        flex-direction: column;
+    }
+    
+    #bienvenue .ampersand-style-white {
+        font-size: 3rem !important;
+        margin: 0.5rem 0;
+    }
+    
+    #bienvenue p {
+        font-size: 1rem !important;
+        padding: 0 1rem;
+    }
+    
+    /* Sections avec padding réduit */
+    section {
+        padding: 3rem 1rem !important;
+    }
+    
+    /* Titres de section plus petits */
+    section h2 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    /* Espacement réduit entre éléments */
+    .space-y-20 > * + * {
+        margin-top: 3rem !important;
+    }
+    
+    .space-y-24 > * + * {
+        margin-top: 3rem !important;
+    }
+    
+    /* Images dans les sections histoire */
+    #histoire .relative.h-96 {
+        height: 250px !important;
+    }
+    
+    /* Programme - colonnes empilées */
+    #jour-j .grid {
+        gap: 2rem !important;
+    }
+    
+    /* Dress code - grille adaptée */
+    #jour-j .flex-wrap {
+        gap: 1rem !important;
+    }
+    
+    #jour-j .flex-wrap > div {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+    
+    /* Formulaire iframe responsive */
+    #confirmation iframe {
+        min-height: 500px !important;
+        height: auto !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Amélioration du conteneur du formulaire */
+    #confirmation .bg-white\/95 {
+        overflow-x: hidden;
+    }
+    
+    /* Lightbox mobile */
+    #lightbox {
+        padding: 0.5rem;
+        touch-action: pan-y pinch-zoom;
+    }
+    
+    #lightbox img {
+        max-width: 95vw;
+        max-height: 85vh;
+        object-fit: contain;
+        touch-action: pan-y pinch-zoom;
+    }
+    
+    #close-lightbox {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.75rem;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    #prev-image,
+    #next-image {
+        padding: 1rem;
+        min-width: 48px;
+        min-height: 48px;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    #prev-image {
+        left: 0.5rem;
+    }
+    
+    #next-image {
+        right: 0.5rem;
+    }
+    
+    #lightbox-counter {
+        bottom: 1rem;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    /* Amélioration du scroll sur mobile */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Empêcher le zoom sur double tap pour les boutons */
+    button {
+        touch-action: manipulation;
+    }
+    
+    /* Footer mobile */
+    footer {
+        padding: 3rem 1rem !important;
+    }
+    
+    footer h3 {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Tablettes */
+@media (min-width: 641px) and (max-width: 1024px) {
+    section {
+        padding: 4rem 2rem !important;
+    }
+    
+    #bienvenue h1 {
+        font-size: 4rem !important;
+    }
+    
+    section h2 {
+        font-size: 4rem !important;
     }
 }
 

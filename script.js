@@ -232,6 +232,34 @@ function initLightbox() {
             }
         }
     });
+
+    // Support du swipe sur mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance pour déclencher le swipe
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe vers la gauche = image suivante
+                navigateImage('next');
+            } else {
+                // Swipe vers la droite = image précédente
+                navigateImage('prev');
+            }
+        }
+    }
 }
 
 // Effets de scroll
