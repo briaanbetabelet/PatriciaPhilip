@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLightbox();
     initScrollEffects();
     setCurrentYear();
+    initHebergementToggle();
 });
 
 // Navigation scroll effect
@@ -288,6 +289,26 @@ function setCurrentYear() {
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
+    }
+}
+
+// Toggle pour afficher/masquer les établissements supplémentaires
+function initHebergementToggle() {
+    const showMoreBtn = document.getElementById('show-more-hebergement');
+    const moreHebergement = document.getElementById('more-hebergement');
+    
+    if (showMoreBtn && moreHebergement) {
+        showMoreBtn.addEventListener('click', function() {
+            if (moreHebergement.classList.contains('hidden')) {
+                moreHebergement.classList.remove('hidden');
+                showMoreBtn.textContent = 'Voir moins';
+            } else {
+                moreHebergement.classList.add('hidden');
+                showMoreBtn.textContent = 'Découvrir plus';
+                // Scroll vers le haut de la section hébergement
+                moreHebergement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     }
 }
 
