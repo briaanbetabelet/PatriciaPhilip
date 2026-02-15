@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect fill="#e8e4df" width="400" height="300"/>
+  <path fill="#c4b8ab" d="M150 180h100v-80h-30v-30h-40v30h-30z" opacity="0.5"/>
+  <text x="200" y="220" text-anchor="middle" fill="#9a8a7f" font-size="14" font-family="Lato, sans-serif">Photo non disponible</text>
+</svg>

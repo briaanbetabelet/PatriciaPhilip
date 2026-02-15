@@ -126,12 +126,13 @@ function initGallery() {
         
         const img = document.createElement('img');
         // Utiliser data-src pour le lazy loading
-        img.dataset.src = `public/${image}`;
+        img.dataset.src = `public/img/Pre-wedding/${image}`;
         // Placeholder transparent ou une petite image de placeholder
         img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
         img.alt = `Photo ${index + 1} - Patricia & Philip Pre-Wedding`;
         img.className = 'w-full h-full object-cover group-hover:opacity-90 transition-opacity duration-300';
         img.loading = 'lazy';
+        img.onerror = function() { this.onerror = null; this.src = 'public/img/placeholder-hebergement.svg'; };
         img.decoding = 'async';
         img.fetchpriority = index < 6 ? 'high' : 'low'; // Priorité pour les 6 premières images
         
@@ -158,10 +159,10 @@ function initLightbox() {
         const nextIndex = currentImageIndex === GALLERY_IMAGES.length - 1 ? 0 : currentImageIndex + 1;
         
         const prevImg = new Image();
-        prevImg.src = `public/${GALLERY_IMAGES[prevIndex]}`;
+        prevImg.src = `public/img/Pre-wedding/${GALLERY_IMAGES[prevIndex]}`;
         
         const nextImg = new Image();
-        nextImg.src = `public/${GALLERY_IMAGES[nextIndex]}`;
+        nextImg.src = `public/img/Pre-wedding/${GALLERY_IMAGES[nextIndex]}`;
     }
 
     window.openLightbox = function(index) {
@@ -175,13 +176,17 @@ function initLightbox() {
 
     function updateLightboxImage() {
         // Charger l'image uniquement quand le lightbox est ouvert
-        const imagePath = `public/${GALLERY_IMAGES[currentImageIndex]}`;
+        const imagePath = `public/img/Pre-wedding/${GALLERY_IMAGES[currentImageIndex]}`;
         if (lightboxImage.src !== imagePath) {
             // Afficher un loader pendant le chargement
             lightboxImage.style.opacity = '0';
             lightboxImage.onload = () => {
                 lightboxImage.style.opacity = '1';
                 lightboxImage.style.transition = 'opacity 0.3s';
+            };
+            lightboxImage.onerror = () => {
+                lightboxImage.src = 'public/img/placeholder-hebergement.svg';
+                lightboxImage.style.opacity = '1';
             };
             lightboxImage.src = imagePath;
         }
