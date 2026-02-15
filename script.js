@@ -1,17 +1,17 @@
 // Configuration
 const GALLERY_IMAGES = [
     "prewedding.jpg",
-    "prewedding-1.jpg",
-    "prewedding-3.jpg",
-    "prewedding-4.jpg",
-    "prewedding-5.jpg",
-    "prewedding-6.jpg",
-    "prewedding-7.jpg",
-    "prewedding-9.jpg",
-    "prewedding-12.jpg",
-    "prewedding-14.jpg",
-    "prewedding-17.jpg",
-    "prewedding-18.jpg",
+    "prewedding1.jpg",
+    "prewedding3.jpg",
+    "prewedding4.jpg",
+    "prewedding5.jpg",
+    "prewedding6.jpg",
+    "prewedding7.jpg",
+    "prewedding9.jpg",
+    "prewedding12.jpg",
+    "prewedding14.jpg",
+    "prewedding17.jpg",
+    "prewedding18.jpg",
 ];
 
 // Navigation
