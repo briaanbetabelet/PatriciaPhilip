@@ -1,17 +1,17 @@
 // Configuration
 const GALLERY_IMAGES = [
-    "Pre-wedding Philip & Patricia.jpg",
-    "Pre-wedding Philip & Patricia_1.jpg",
-    "Pre-wedding Philip & Patricia_3.jpg",
-    "Pre-wedding Philip & Patricia_4.jpg",
-    "Pre-wedding Philip & Patricia_5.jpg",
-    "Pre-wedding Philip & Patricia_6.jpg",
-    "Pre-wedding Philip & Patricia_7.jpg",
-    "Pre-wedding Philip & Patricia_9.jpg",
-    "Pre-wedding Philip & Patricia_12.jpg",
-    "Pre-wedding Philip & Patricia_14.jpg",
-    "Pre-wedding Philip & Patricia_17.jpg",
-    "Pre-wedding Philip & Patricia_18.jpg",
+    "prewedding.jpg",
+    "prewedding-1.jpg",
+    "prewedding-3.jpg",
+    "prewedding-4.jpg",
+    "prewedding-5.jpg",
+    "prewedding-6.jpg",
+    "prewedding-7.jpg",
+    "prewedding-9.jpg",
+    "prewedding-12.jpg",
+    "prewedding-14.jpg",
+    "prewedding-17.jpg",
+    "prewedding-18.jpg",
 ];
 
 // Navigation
